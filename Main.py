@@ -9,4 +9,5 @@ def menu():
 while True:
     eleccio = int(input("Tria una opcio"))
     match eleccio:
-        case 
+        case 1:
+            jocs.janken()
