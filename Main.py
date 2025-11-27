@@ -1,23 +1,21 @@
-import janken
+import janken, nana
 
 def menu():
     while True:
         print("--BENVINGUT AL MINI ARCADE--")
-        print("Jugar a Pedra, Paper, Tisora")
-        print("Jugar a Endivinar el Número")
+        print("1, Jugar a Pedra, Paper, Tisora")
+        print("2, Jugar a Endivinar el Número")
         print("S: Sortir")
 
-        eleccio = int(input("Tria una opcio"))
+        eleccio = input("Tria una opcio")
         match eleccio:
-            case 1:
+            case "1":
                 janken()
-            case 2:
-
-            case 3:
+            case "2":
+                nana()
+            case "S" | "s":
                 print("Sortint")
                 break
-            case _:
-                print("Opcio no valida")
-                continue
+            
 menu()
 
