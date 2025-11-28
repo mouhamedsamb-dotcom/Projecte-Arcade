@@ -1,6 +1,15 @@
 import random 
-marcador = {"Jugador": 0, "Màquina": 0}
+def triar_mode():
+    print("Benvingut a Janken!")
+    print("Tria el mode de joc:")
+    print("1 - Primer que arribe a 3 victòries")
+    print("2 - Millor de 5 rondes")
+
+    mode = input("Opció: ")
+    print("Mode seleccionat:", "Primer a 3" if mode == "1" else "Millor de 5")
+
 def print_marcador(marcador):
+    marcador = {"Jugador": 0, "Màquina": 0}
     print("------------------")
     print("  Marcador  ")
     print("------------------")
@@ -9,7 +18,7 @@ def print_marcador(marcador):
     print("------------------")   
 def janken():
     opcions = ["paper", "tisora", "pedra"]
-    while marcador["Jugador"] < 2 and marcador["Màquina"] < 2: 
+    while marcador["Jugador"] < 3 and marcador["Màquina"] < 3: 
         print("Opcions: paper, tisora, pedra")
         opcio = input("Tria una opcio (o 's' per sortir): ")
         if opcio == 's':
@@ -33,30 +42,36 @@ def janken():
             print("Has perdut aquesta ronda!")
             marcador["Màquina"] += 1 
         print_marcador(marcador)
+    triar_mode()
     
-    if marcador["Jugador"] == 2:
+    if mode == '1' and marcador["Jugador"] == 3:
         print("Has guanyat la partida!")
-    elif marcador["Màquina"] == 2:
+    elif mode == '1' and marcador["Màquina"] == 3:
+        print("La màquina ha guanyat la partida!")
+        print("Fi del joc!")
+    elif mode == '2' and marcador["Jugador"] > marcador["Màquina"]:
+        print("Has guanyat la partida!")
+    elif mode == '2' and marcador["Jugador"] < marcador["Màquina"]:
         print("La màquina ha guanyat la partida!")
 janken()
-numero_secret = random.randint(1, 100)
-intents = 0
+
 def nana():
+    numero_secret = random.randint(1, 100)
+    intents = 0
     while True:
-        print("Endevina el número entre 1 i 100.")
+        intent = input("Introdueix un número 1-100 (o 's' per sortir): ").strip()
+        if intent == 's':
+            print("Sortint del joc.")
+            return
         if not intent.isdigit():
-            print("Si us plau, introdueix un número vàlid.")
+            print("Introdueix un número vàlid.")
             continue
         intent = int(intent)
         intents += 1
-        if intent < 1 or intent > 100:
-            print("El número ha d'estar entre 1 i 100.")
-            continue
         if intent < numero_secret:
-            print("Es mes alt!")
+            print("És més alt!")
         elif intent > numero_secret:
-            print("Es mes baix!")
+            print("És més baix!")
         else:
             print(f"Has endevinat el número {numero_secret} en {intents} intents.")
-            break
-
+            return
