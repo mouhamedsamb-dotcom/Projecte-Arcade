@@ -76,8 +76,7 @@ def janken():
     else:
         print("Empat final!")
 janken()
-
-
+#Ara crearem una altra funcio per al joc de endevinar el numero
 def nana():
 # Importem el fitxer robot.py per a utilitzar la funció robot()
     import robot
