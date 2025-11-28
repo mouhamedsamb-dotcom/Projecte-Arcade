@@ -79,10 +79,12 @@ janken()
 
 
 def nana():
+# Importem el fitxer robot.py per a utilitzar la funció robot()
     import robot
     numero_secret = random.randint(1, 100)
     intents = 0
     while True:
+    # Fem que l'usuari introduisca un número
         intent = input("Introdueix un número 1-100 (o 's' per sortir): ").strip()
         if intent == 's':
             print("Sortint del joc.")
@@ -90,8 +92,10 @@ def nana():
         if not intent.isdigit():
             print("Introdueix un número vàlid.")
             continue
+# Convertim l'entrada a enter i sumem els intents
         intent = int(intent)
         intents += 1
+#Donem pistes a l'usuari utilitzant condicions.
         if intent < numero_secret:
             print("Es més baix")
         elif intent > numero_secret:
