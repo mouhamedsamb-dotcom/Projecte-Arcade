@@ -1,6 +1,6 @@
 # Projecte-Arcade
 ## Objectiu 
-Aquest projecte és un petit arcade desenvolupat en Python que inclou dos jocs clàssics per jugar des del terminal:
+Aquest projecte és un petit arcade desenvolupat en Python que inclou dos jocs per jugar des del terminal:
 
 1.Janken (Pedra, Paper i Tisora)
 
@@ -32,4 +32,5 @@ Correcte
 Al finalitzar el program se mostrara al jugador el número de intents i el número seleccionat.
 
 ### Autor
+
 **Mouhamed Samb Ndiaye SMX2A**
