@@ -88,6 +88,7 @@ def nana():
         if intent == 's':
             print("Sortint del joc.")
             return
+     
         if not intent.isdigit():
             print("Introdueix un número vàlid.")
             continue
@@ -95,6 +96,9 @@ def nana():
         intent = int(intent)
         intents += 1
 #Donem pistes a l'usuari utilitzant condicions.
+        if intent < 1 or intent > 100:
+            print("El número ha de ser entre 1 i 100.")
+            continue
         if intent < numero_secret:
             print("Es més baix")
         elif intent > numero_secret:
@@ -102,3 +106,5 @@ def nana():
         else:
             print(f"Has endevinat el número {numero_secret} en {intents} intents.")
             return
+        import random
+nana()
